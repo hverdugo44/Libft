@@ -42,6 +42,7 @@ $(BONUS_NAME):$(OFILES) $(OBONUS) $(LIB)
 	cc $(flags) -c $< -o $@
 
 clean:
+	echo "Borrando O-Files"
 	rm -rf $(OFILES) $(OBONUS)
 
 fclean:
