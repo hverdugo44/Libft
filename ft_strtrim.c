@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/30 14:34:56 by heverdug          #+#    #+#             */
+/*   Updated: 2025/09/30 16:55:01 by heverdug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char	*inicio(char const *s1, char const *set)
+static char	*inicio(char const *s, char const *set)
 {
-	int	i;
+	int		i;
+	char	*s1;
 
+	s1 = (char *)s;
 	i = 0;
 	while (s1[i])
 	{
@@ -14,10 +28,12 @@ static char	*inicio(char const *s1, char const *set)
 	return (NULL);
 }
 
-static char	*fin(char const *s1, char const *set)
+static char	*fin(char const *s, char const *set)
 {
-	int	i;
+	int		i;
+	char	*s1;
 
+	s1 = (char *)s;
 	i = ft_strlen(s1) - 1;
 	while (s1[i])
 	{
@@ -46,7 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (str);
 	}
 	end = fin(s1, set);
-	while (&str[i] != end)
+	while (&start[i] != end)
 		i++;
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)

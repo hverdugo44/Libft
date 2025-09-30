@@ -1,10 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/30 14:25:33 by heverdug          #+#    #+#             */
+/*   Updated: 2025/09/30 15:00:22 by heverdug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	ft_bzero(char *str, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
+	size_t	i;
+	char	*cpy;
+
+	cpy = (char *)s;
+	i = 0;
+	while (i < n)
 	{
-		str[n - 1] = 0;
-		n--;
+		cpy[i] = 0;
+		i++;
 	}
 }
