@@ -6,13 +6,13 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:24:28 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 14:24:35 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:49:01 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

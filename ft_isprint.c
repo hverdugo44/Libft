@@ -6,13 +6,13 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:28:14 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 14:28:16 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:49:27 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
 		return (1);

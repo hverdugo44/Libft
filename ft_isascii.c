@@ -6,16 +6,15 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:27:52 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 14:27:56 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:47:50 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char c)
-
+int	ft_isascii(int c)
 {
-	if (c <= 127 && c > -1)
+	if (c < 128 && c > -1)
 		return (1);
 	return (0);
 }

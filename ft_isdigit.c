@@ -6,13 +6,13 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:24:47 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 14:25:13 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:49:16 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

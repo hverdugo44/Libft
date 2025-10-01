@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:53:39 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 16:53:58 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:18:43 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@
 size_t	ft_strlen(char const *s);
 char	*ft_strchr(char const *s, int c);
 
-int		ft_isalnum(char c);
-int		ft_isalpha(char c);
-int		ft_isascii(char c);
-int		ft_isdigit(char c);
-int		ft_isprint(char c);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 
 void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 
 char	*ft_strchr(char const *s, int c);
