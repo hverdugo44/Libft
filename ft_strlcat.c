@@ -1,51 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 10:47:48 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/08 10:47:51 by heverdug         ###   ########.fr       */
+/*   Created: 2025/10/08 10:54:03 by heverdug          #+#    #+#             */
+/*   Updated: 2025/10/08 11:43:29 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	copy_d(char *dest, char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
+	size_t	ret;
 
 	i = 0;
-	while (n > i)
-	{
-		dest[i] = src[i];
+	j = 0;
+	ret = ft_strlen(src) + ft_strlen(dest);
+	if (size == 0)
+		return (ret);
+	while (dest[i])
 		i++;
-	}
-}
-
-static void	copy_i(char *dest, char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (n > i)
+	while (src[j] && dest[i + j] && i + j < size - 1)
 	{
-		dest[n - 1] = src[n - 1];
-		n--;
+		dest[i + j] = src[j];
+		j++;
 	}
-}
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	char	*s1;
-	char	*d1;
-
-	s1 = (char *)src;
-	d1 = (char *)dest;
-	if (dest > src)
-		copy_i(d1, s1, n);
-	else
-		copy_d(d1, s1, n);
-	return (dest);
+	dest[i + j] = 0;
+	return (ret);
 }

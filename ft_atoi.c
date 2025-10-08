@@ -1,51 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 10:47:48 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/08 10:47:51 by heverdug         ###   ########.fr       */
+/*   Created: 2025/10/08 12:46:43 by heverdug          #+#    #+#             */
+/*   Updated: 2025/10/08 13:07:38 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	copy_d(char *dest, char *src, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	res;
+	int	sig;
+	int	i;
 
+	res = 0;
+	sig = 1;
 	i = 0;
-	while (n > i)
+	while (str[i] > 7 && str[i] < 14)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		dest[i] = src[i];
+		if (str[i] == '-')
+			sig = -1;
 		i++;
 	}
-}
-
-static void	copy_i(char *dest, char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (n > i)
+	while (ft_isdigit(str[i]))
 	{
-		dest[n - 1] = src[n - 1];
-		n--;
+		res = res * 10 + (str[i] - 48);
+		i++;
 	}
-}
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	char	*s1;
-	char	*d1;
-
-	s1 = (char *)src;
-	d1 = (char *)dest;
-	if (dest > src)
-		copy_i(d1, s1, n);
-	else
-		copy_d(d1, s1, n);
-	return (dest);
+	return (res * sig);
 }
