@@ -2,15 +2,17 @@
 
 int	main(int argc, char **argv)
 {
-	int	i = 1;
-	char	*str;
+	int	i = 0;
+	char	**mat;
+	(void)argc;
 
-	while (argc > i)
+	mat = ft_split(argv[1], ft_atoi(argv[2]));
+	while (mat[i] != NULL)
 	{
-		str = ft_itoa(ft_atoi(argv[i]));
-		printf("%s\n", str);
-		free(str);
+	 	printf("%s\n", mat[i]);
+		free(mat[i]);
 		i++;
 	}
+	free(mat);
 	return (0);
 }

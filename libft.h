@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:53:39 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/08 15:07:16 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:52:29 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

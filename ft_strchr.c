@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:30:38 by heverdug          #+#    #+#             */
-/*   Updated: 2025/09/30 16:54:23 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/09 16:57:01 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 char	*ft_strchr(char const *s, int c)
 {
-	int		i;
-	char	*cpy;
+	int				i;
+	unsigned char	*cpy;
 
-	cpy = (char *)s;
+	cpy = (unsigned char *)s;
 	i = 0;
-	if (cpy[i] == c)
-		return (&cpy[i]);
-	i++;
-	while (cpy[i - 1])
+	while (cpy[i])
 	{
-		if (cpy[i] == c)
-			return (&cpy[i]);
+		if (cpy[i] == (unsigned char)c)
+			return ((char *)&cpy[i]);
 		i++;
 	}
+	if (cpy[i] == (unsigned char)c)
+		return ((char *)&cpy[i]);
 	return (NULL);
 }
