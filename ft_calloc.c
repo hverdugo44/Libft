@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:47:01 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/10 17:02:52 by hverdugo         ###   ########.fr       */
+/*   Updated: 2025/10/11 15:26:28 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ void	*ft_calloc(size_t n, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (n == 0 || size == 0)
-	{
-		ptr = (char *)malloc(1);
-		if (!ptr)
-			return (NULL);
-		ptr[0] = 0;
-	}
+	if (n == 0 || size == 0 || 2147483647 / size < n)
+		ptr = (char *)malloc(0);
 	else
 	{
 		ptr = (char *)malloc(n * size);

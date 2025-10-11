@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:41:11 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/08 14:46:11 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/11 15:34:05 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	str = (char *)malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);

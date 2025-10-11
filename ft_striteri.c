@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:47:01 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/08 14:50:15 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/11 15:33:10 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
+	if (!f)
+		return ;
 	i = 0;
 	while (s[i])
 	{

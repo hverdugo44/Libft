@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:03:51 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/11 13:03:53 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/11 16:59:14 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	print(str, fd);
 }
+

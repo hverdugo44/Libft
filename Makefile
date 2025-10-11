@@ -6,7 +6,7 @@
 #    By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 14:37:19 by heverdug          #+#    #+#              #
-#    Updated: 2025/10/11 13:13:05 by heverdug         ###   ########.fr        #
+#    Updated: 2025/10/11 17:16:30 by heverdug         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,18 +26,26 @@ INC = libft.h
 
 FLAGS = -Wall -Wextra -Werror -g
 
-all: $(NAME)
+all: bonus_checker $(NAME)
 
 bonus: $(BONUS)
 
-$(NAME): $(OFL) $(INC) Makefile
+$(NAME): $(OFL)
 	ar crs $(NAME) $(OFL)
+	echo "Libft.a Compiled"
 
-$(BONUS): $(OBNS) $(OFL) $(INC) Makefile
+bonus_checker:
+	if ls ./.bo 1> /dev/null 2>&1; then \
+		make fclean -C . --no-print-directory; \
+	fi
+
+
+$(BONUS): $(OBNS) $(OFL)
 	ar crs $(NAME) $(OFL) $(OBNS)
 	touch .bo
 
-%.o: %.c
+%.o: %.c $(INC) Makefile
+	echo "Compiling $<"
 	cc $(FLAGS) -c $< -o $@
 
 clean:
@@ -46,8 +54,7 @@ clean:
 fclean:
 	rm -rf $(OFL) $(OBNS) $(BONUS) $(NAME)
 
-re:
-	make fclean
-	make all
+re: fclean all
 
 .PHONY: all clear fclear re bonus
+.SILENT:
