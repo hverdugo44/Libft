@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:03:51 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/11 16:59:14 by heverdug         ###   ########.fr       */
+/*   Updated: 2025/10/12 18:20:51 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ static void	excepcion(int n, int fd)
 		write(fd, "0", 1);
 }
 
-void	print(char *str, int fd)
+static void	print(char *str, int fd)
 {
 	write(fd, str, ft_strlen(str));
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	str[12];
+	char	str[13];
 	int		len;
 	int		i;
 
@@ -68,4 +68,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	print(str, fd);
 }
-

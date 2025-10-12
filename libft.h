@@ -6,7 +6,7 @@
 /*   By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:53:39 by heverdug          #+#    #+#             */
-/*   Updated: 2025/10/11 11:35:26 by hverdugo         ###   ########.fr       */
+/*   Updated: 2025/10/12 18:16:46 by heverdug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define LIBFT_H
 
 # include <stdio.h>
+# include <stddef.h>
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
