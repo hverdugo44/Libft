@@ -6,7 +6,7 @@
 #    By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 14:37:19 by heverdug          #+#    #+#              #
-#    Updated: 2025/10/12 17:51:24 by heverdug         ###   ########.fr        #
+#    Updated: 2025/10/13 00:31:20 by hverdugo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ FLAGS = -Wall -Wextra -Werror -g
 all: bonus_checker $(NAME)
 
 
-bonus: $(OBNS) $(OFL)
+bonus: $(NAME) $(OBNS)
 	ar crs $(NAME) $(OBNS) $(OFL)
 	echo "$(NAME) Compiled"
 
@@ -61,5 +61,5 @@ fclean:
 re: fclean all
 	echo "Again"
 
-.PHONY: all clear fclear re bonus
+.PHONY: all clear fclear re bonus bonus_checker delete
 .SILENT:
