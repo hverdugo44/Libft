@@ -6,7 +6,7 @@
 #    By: heverdug <heverdug@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 14:37:19 by heverdug          #+#    #+#              #
-#    Updated: 2025/10/13 00:31:20 by hverdugo         ###   ########.fr        #
+#    Updated: 2025/10/15 14:24:18 by heverdug         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,17 @@ FLAGS = -Wall -Wextra -Werror -g
 all: bonus_checker $(NAME)
 
 
-bonus: $(NAME) $(OBNS)
-	ar crs $(NAME) $(OBNS) $(OFL)
-	echo "$(NAME) Compiled"
+bonus: 
+	$(MAKE) WB=1 --no-print-directory $(NAME)
 
-$(NAME): $(OFL)
-	ar crs $(NAME) $(OFL)
+ifdef WB
+ALL_OBJ := $(OFL) $(OBNS)
+else
+ALL_OBJ := $(OFL)
+endif
+
+$(NAME): $(ALL_OBJ)
+	ar crs $(NAME) $(ALL_OBJ)
 	echo "$(NAME) Compiled"
 
 bonus_checker:
@@ -51,12 +56,12 @@ delete:
 	echo "Bonus files deleted"
 
 clean:
-	rm -rf $(OFL) $(OBNS) $(BONUS)
-	echo "Ofiles deleted"
+	rm -rf $(OFL) $(OBNS)
+	echo "O-files deleted"
 
 fclean:
-	rm -rf $(OFL) $(OBNS) $(BONUS) $(NAME)
-	echo "Ofiles and $(NAME) deleted"
+	rm -rf $(OFL) $(OBNS) $(NAME)
+	echo "O-files and $(NAME) deleted"
 
 re: fclean all
 	echo "Again"
